@@ -476,7 +476,7 @@ export function getAndroidHermesEnabled(gradleFile: string): boolean {
   if (fileDoesNotExistOrIsDirectory(buildGradlePath)) {
     throw new Error(`Unable to find gradle file "${buildGradlePath}".`);
   }
-
+  out.text(chalk.cyan(`Detecting ${buildGradlePath} gradle path:\n`));
   return g2js
     .parseFile(buildGradlePath)
     .catch(() => {
