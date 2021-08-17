@@ -238,6 +238,7 @@ export default class CodePushReleaseReactCommand extends CodePushReleaseCommandB
 
       return await this.release(client);
     } catch (error) {
+      out.text("Failed to release a CodePush update" + error);
       debug(`Failed to release a CodePush update - ${inspect(error)}`);
       return failure(ErrorCodes.Exception, "Failed to release a CodePush update.");
     } finally {
